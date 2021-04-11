@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
 	private static ConnectionManager instance;
-	static String url="jdbc:mysql://localhost:3306/hajar-store?useSSL=false";
+	static String url="jdbc:mysql://localhost:3306/craftsmanship?useSSL=false";
 	static String user="root";
 	static String password="";
 	public ConnectionManager() {
@@ -20,9 +20,8 @@ public class ConnectionManager {
 		Connection con=null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/hajar-store","root","");
+			con=DriverManager.getConnection(url,user,password);
 		
-			
 			return con; 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
