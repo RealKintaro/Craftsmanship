@@ -31,8 +31,8 @@ public class SignupDaoImpl implements Dao{
 		// TODO Auto-generated method stub
 		User user=(User)t;
 		
-		ConnectionManager cm=ConnectionManager.getInstance();
-		Connection con=cm.openConnection();
+		ConnectionManager cm= ConnectionManager.getInstance();
+		Connection con= cm.openConnection();
 		String sql="insert into user(nom,prenom,email,mdp) values(?,?,?,?)";
 		String args[]= {user.getNom(),user.getPrenom(),user.getEmail(),user.getMotdepass()};
 		PreparedStatement ps=StatementManager.stmtprepare(con, sql, args);
